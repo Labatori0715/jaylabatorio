@@ -216,8 +216,6 @@ function PortfolioPage() {
   return (
     <div className="site-shell">
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header">
-       <a href="#home" className="brand" aria-label="Jay Labatorio, home">
   <img
     src="/images/jay.jpg"
     className="brand-photo"

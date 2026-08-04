@@ -190,7 +190,7 @@ function PortfolioPage() {
     () => activeFilter === 'All' ? portfolioItems : portfolioItems.filter((item) => item.category === activeFilter),
     [activeFilter],
   )
-
+import jayPhoto from "../assets/jay.png";
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormState('sending')
@@ -275,7 +275,11 @@ function PortfolioPage() {
             <div className="profile-card">
               <div className="profile-top"><span>PROFILE / 2026</span><BadgeCheck size={20} /></div>
               <div className="portrait-frame">
-                <div className="portrait-monogram">JL</div>
+                                <img
+                  src={jayPhoto}
+                  alt="Jay Labatorio"
+                  className="portrait-photo"
+                />
                 <div className="portrait-lines" />
                 <span className="portrait-badge"><span /> Remote Ready</span>
               </div>

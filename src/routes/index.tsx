@@ -220,7 +220,6 @@ function PortfolioPage() {
        <a href="#home" className="brand" aria-label="Jay Labatorio, home">
   <img
     src="/images/jay.jpg"
-    alt="Jay Labatorio"
     className="brand-photo"
   />
 

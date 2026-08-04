@@ -217,7 +217,7 @@ function PortfolioPage() {
     <div className="site-shell">
       <a className="skip-link" href="#main">Skip to content</a>
   <img
-    src="/images/jay.jpg"
+    src="jay.jpg"
     className="brand-photo"
   />
 

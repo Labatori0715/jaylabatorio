@@ -217,10 +217,18 @@ function PortfolioPage() {
     <div className="site-shell">
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
-        <a href="#home" className="brand" aria-label="Jay Labatorio, home">
-          <span className="brand-mark">JL</span>
-          <span><strong>Jay Labatorio</strong><small>Digital Support Specialist</small></span>
-        </a>
+       <a href="#home" className="brand" aria-label="Jay Labatorio, home">
+  <img
+    src="/images/jay.jpg"
+    alt="Jay Labatorio"
+    className="brand-photo"
+  />
+
+  <span>
+    <strong>Jay Labatorio</strong>
+    <small>Digital Support Specialist</small>
+  </span>
+</a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}
         </nav>

@@ -190,7 +190,6 @@ function PortfolioPage() {
     () => activeFilter === 'All' ? portfolioItems : portfolioItems.filter((item) => item.category === activeFilter),
     [activeFilter],
   )
-import jayPhoto from "../assets/jay.png";
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormState('sending')
@@ -215,12 +214,13 @@ import jayPhoto from "../assets/jay.png";
 
   return (
     <div className="site-shell">
-    <a href="#home" className="brand" aria-label="Jay Labatorio, home">
-  <img
-    src="/jay.png"
-    alt="Jay Labatorio"
-    className="brand-photo"
-  />
+      <header className="site-header">
+        <a href="#home" className="brand" aria-label="Jay Labatorio, home">
+          <img
+            src="/jay.png"
+            alt="Jay Labatorio"
+            className="brand-photo"
+          />
 
   <span>
     <strong>Jay Labatorio</strong>
@@ -275,8 +275,8 @@ import jayPhoto from "../assets/jay.png";
             <div className="profile-card">
               <div className="profile-top"><span>PROFILE / 2026</span><BadgeCheck size={20} /></div>
               <div className="portrait-frame">
-                                <img
-                  src={jayPhoto}
+                <img
+                  src="/jay.png"
                   alt="Jay Labatorio"
                   className="portrait-photo"
                 />

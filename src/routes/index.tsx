@@ -137,6 +137,9 @@ const portfolioItems = [
   { category: 'Video Editing', title: 'Product Story Reel', description: 'A fast-paced vertical promo that turns product highlights into a concise visual story.', tech: ['Premiere', 'Canva'], icon: Play, tone: 'violet' },
   { category: 'Technical Support', title: 'Business Website Care', description: 'Content updates, responsive checks, plugin maintenance, and issue resolution.', tech: ['WordPress', 'HTML/CSS'], icon: Globe2, tone: 'cyan' },
   { category: 'Technical Support', title: 'Records Database', description: 'A practical data system for organizing, finding, and maintaining operational records.', tech: ['PHP', 'MySQL'], icon: Database, tone: 'navy' },
+  { category: 'Junior Developer', title: 'NDMU School Management', description: 'Maintained the school website with accurate academic content and responsive updates.', tech: ['WordPress', 'HTML/CSS'], icon: Globe2, tone: 'blue', url: 'https://sms.ndmu.edu.ph/' },
+  { category: 'Junior Developer', title: 'RMMC School Management', description: 'Delivered website support and updates for a mining company’s online presence.', tech: ['WordPress', 'PHP'], icon: Globe2, tone: 'slate', url: 'https://rmmcmi.com/' },
+  { category: 'Full Stack Developer', title: 'Santos Inventory Motorcycle Portal', description: 'Built a motorcycle inventory and support portal for Santos Inventory Management.', tech: ['PHP', 'MySQL'], icon: Database, tone: 'navy', url: 'https://motorcycle.santosinventory.com/' },
   { category: 'Virtual Assistance', title: 'Operations Command Center', description: 'A streamlined workspace for email, reports, task tracking, and recurring processes.', tech: ['Sheets', 'Workspace'], icon: FolderKanban, tone: 'blue' },
   { category: 'Virtual Assistance', title: 'Monthly Reporting System', description: 'Clean data entry and dashboard-style reports that make performance easier to review.', tech: ['Excel', 'Data Entry'], icon: BarChart3, tone: 'slate' },
   { category: 'Video Editing', title: 'Social Content Pack', description: 'Short-form edits and branded motion assets prepared for consistent weekly posting.', tech: ['Video Editing', 'Canva'], icon: Video, tone: 'indigo' },
@@ -368,14 +371,22 @@ function PortfolioPage() {
             {['All', 'Graphic Design', 'Video Editing', 'Technical Support', 'Virtual Assistance'].map((filter) => <button key={filter} className={filter === activeFilter ? 'active' : ''} onClick={() => setActiveFilter(filter)}>{filter}</button>)}
           </div>
           <div className="portfolio-grid">
-            {filteredWork.map(({ category, title, description, tech, icon: Icon, tone }, index) => (
+            {filteredWork.map(({ category, title, description, tech, icon: Icon, tone, url }, index) => (
               <article className={`project-card ${index === 0 ? 'project-featured' : ''}`} key={title}>
                 <div className={`project-visual tone-${tone}`}>
                   <div className="visual-grid" /><div className="visual-circle" /><Icon className="visual-icon" />
                   <span className="visual-index">0{portfolioItems.findIndex((item) => item.title === title) + 1}</span>
                   {category === 'Video Editing' && <span className="play-button"><Play fill="currentColor" /></span>}
                 </div>
-                <div className="project-content"><div className="project-meta"><span>{category}</span><ExternalLink size={17} /></div><h3>{title}</h3><p>{description}</p><div>{tech.map((item) => <small key={item}>{item}</small>)}</div></div>
+                <div className="project-content">
+                  <div className="project-meta">
+                    <span>{category}</span>
+                    {url ? <a href={url} target="_blank" rel="noreferrer"><ExternalLink size={17} /></a> : <ExternalLink size={17} />}
+                  </div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <div>{tech.map((item) => <small key={item}>{item}</small>)}</div>
+                </div>
               </article>
             ))}
           </div>
